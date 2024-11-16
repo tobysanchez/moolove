@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رسالة داخل ظرف</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .envelope {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background: #fefefe;
+      border: 2px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    .envelope::before,
+    .envelope::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    .envelope::before {
+      top: 0;
+      left: 0;
+      border-width: 100px 150px 0 150px;
+      border-color: #ddd transparent transparent transparent;
+    }
+
+    .envelope::after {
+      bottom: 0;
+      left: 0;
+      border-width: 0 150px 100px 150px;
+      border-color: transparent transparent #ddd transparent;
+    }
+
+    .message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope">
+    <div class="message">مرحباً! هذه رسالتي داخل الظرف 😊</div>
+  </div>
+</body>
+</html>
